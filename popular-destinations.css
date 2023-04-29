@@ -1,0 +1,149 @@
+/* .......navbar........ */
+.nav-header {
+    background-color: rgb(121,62,62);
+    display: flex;
+    height: 50px;
+    padding-left: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .nav-header > .nav-title {
+    font-family: navBrandFont;
+    font-size: 25px;
+    padding-top: 5px;
+    text-align: center;
+    align-items: center;
+    
+  }
+  
+  .nav-header > .nav-title > a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-btn {
+    display: none;
+  }
+  
+  #nav-check {
+    display: none;
+  }
+  
+  .nav-links > ul > li {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 15px;
+  }
+  
+  .nav-links > ul > li > a {
+    color: #efefef;
+    text-decoration: none;
+  }
+  
+  .navItems::after {
+    border-bottom: solid 1px white;
+    content: "";
+    display: block;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  
+  .navItems:hover::after {
+    transform: scaleX(1);
+  }
+/* .....districts.... */
+.destination-cardTable {
+    border-spacing: 10px 10px;
+    width: 50px;
+  }
+  
+  .destination-cardHolder {
+    margin-left: 80px;
+    margin-top: 135px;
+  }
+  
+  .d-card {
+    border-radius: 5px;
+    font-family: "Abel", sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    height: 160px;
+    text-align: center;
+    width: 200px;
+  }
+  
+  .d-card:hover {
+    opacity: 0.7;
+  }
+  
+  .destination-cardTable td a {
+    color: white;
+    text-decoration: none;
+  }
+  .alapuzha {
+    background: url(alappuzha.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .ernakulam {
+    background: url(ernakulam.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .kozhikod  {
+    background: url(kozhikod.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .palakkad {
+    background: url(palakkad.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .kannur {
+    background: url(kannur.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .idukki {
+    background: url(idukki.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .kottayam {
+    background: url(kottayam.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .thrissur {
+    background: url(thrissur.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .pathanamthitta {
+    background: url(pathanamthitta.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .kollam {
+    background: url(kollam.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .wayanad {
+    background: url(wayanad.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .trivandrum {
+    background: url(trivandrum.jpg) no-repeat center;
+    background-size: cover;
+  }
+   /* .........footer..... */
+   footer {
+    background-color: rgb(121, 62, 62);
+    bottom: 0;
+    color: white;
+    font-size: 12px;
+    height: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+  }

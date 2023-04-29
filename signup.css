@@ -1,0 +1,121 @@
+body{
+    margin: 0px;
+    padding-left: 0px;
+    background-image: url(signup.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    overflow: hidden;
+}
+.sign-up-form{
+    width: 300px;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.3);
+    background: #fff;
+    padding: 20px;
+    margin: 8% auto;
+    text-align: center;
+}
+.sign-up-form h1{
+    color: #1e8ddd;
+    margin-bottom: 30px;
+}
+.input-box{
+    border-radius: 20px;
+    padding: 10px;
+    margin:10px 0;
+    width:100%;
+    border: 1px solid #999;
+    outline: none;
+}
+.button{
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.signup-btn{
+    background-color: #1c8adb;
+}
+a{
+    text-decoration: none;
+}
+
+/* .......navbar........ */
+.nav-header {
+    background-color: rgb(121,62,62);
+    display: flex;
+    height: 50px;
+    padding-left: 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .nav-header > .nav-title {
+    font-family: navBrandFont;
+    font-size: 25px;
+    padding-top: 5px;
+    text-align: center;
+    align-items: center;
+    
+  }
+  
+  .nav-header > .nav-title > a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav-btn {
+    display: none;
+  }
+  
+  #nav-check {
+    display: none;
+  }
+  
+  .nav-links > ul > li {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-top: 15px;
+  }
+  
+  .nav-links > ul > li > a {
+    color: #efefef;
+    text-decoration: none;
+  }
+  
+  .navItems::after {
+    border-bottom: solid 1px white;
+    content: "";
+    display: block;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  
+  .navItems:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* .........footer..... */
+  footer {
+    background-color: rgb(121, 62, 62);
+    bottom: 0;
+    color: white;
+    font-size: 12px;
+    height: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+  }
