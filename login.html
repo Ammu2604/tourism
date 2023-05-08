@@ -50,19 +50,73 @@
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="Enter your Password"exampleInputPassword1">
+              <input type="password" class="form-control" placeholder="Enter your Password" id="exampleInputPassword1">
             </div>
             <div class="mb-3 form-check">
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
               &nbsp;&nbsp;&nbsp;<a href="#">forgot password</a>
             </div>
-            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="signup-btn">Login</button>
+           
           </form>
               
     </div>
 </div>
 </main>
+
+<script>
+  const emailInput=document.querySelector('.form-control[type="email"]');
+  const passwordInput=document.querySelector('.form-control[type="password"]');
+  const signupButton=document.querySelector('.signup-btn');
+
+  // password validation
+
+  const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; 
+  
+  const passwordStrengthText = document.createElement('span');
+  passwordStrengthText.style.marginLeft = '10px';
+  passwordInput.parentNode.insertBefore(passwordStrengthText, passwordInput.nextSibling);
+  passwordInput.addEventListener('input', () => {
+    if (passwordRegex.test(passwordInput.value)) {
+      passwordInput.style.backgroundColor = 'green';
+      passwordStrengthText.textContent = 'Strong';
+      passwordStrengthText.style.color = 'green';
+    } else if (passwordInput.value.length >= 5) {
+      passwordInput.style.backgroundColor = 'orange';
+      passwordStrengthText.textContent = 'Medium';
+      passwordStrengthText.style.color = 'orange';
+    } else if (passwordInput.value.length <= 4) {
+      passwordInput.style.backgroundColor = 'red';
+      passwordStrengthText.textContent = 'Weak';
+      passwordStrengthText.style.color = 'red';
+    } else {
+      passwordInput.style.backgroundColor = '';
+      passwordStrengthText.textContent = '';
+    }
+  });
+
+  // Form submission
+  signupButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const form = document.querySelector('form');
+    if (form.checkValidity()) {
+      // submit form
+      
+      alert("You have successfully signed in")
+      
+     
+    } else {
+      // show validation error messages
+      emailInput.reportValidity();
+      passwordInput.reportValidity();
+      confirmInput.reportValidity();
+      phoneInput.reportValidity();
+    }
+
+  });
+  
+</script>
 <footer>
   <div class="copyright">
     <p>Copyright &#169 Praicy Tourism ltd</p>

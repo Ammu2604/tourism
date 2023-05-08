@@ -38,19 +38,94 @@
           </ul>
         </nav>
       </header>
-      <main>
-   <div class="sign-up-form">
+     
+<main>
+  <div class="sign-up-form">
     <h1>Sign Up Now</h1>
     <form>
-        <input type="email" class="input-box" placeholder="Your Email">
-        <input type="password" class="input-box" placeholder="Your Password">
-        <p><span><input type="checkbox"></span> agree to the terms and services</p>
-        <button type="button" class="signup-btn">Sign Up</button>
-        <p>Do you have an account? <a href="login.html" >Login</a></p>
-    
+      <input type="email" class="input-box" placeholder="Your Email">
+      <input type="password" class="input-box" placeholder="Your Password">
+      <input type="confirmpassword" class="input-box" placeholder="Confirm your Password">
+      <input type="number" class="input-box" placeholder="Mobile no">
+      <p><span><input type="checkbox"></span> agree to the terms and services</p>
+      <button type="button" class="signup-btn">Sign Up</button>
+      <p>Do you have an account? <a href="login.html">Login</a></p>
     </form>
-   </div> 
+  </div>
 </main>
+
+<script>
+  const emailInput = document.querySelector('.input-box[type="email"]');
+  const passwordInput = document.querySelector('.input-box[type="password"]');
+  const confirmInput = document.querySelector('.input-box[type="confirmpassword"]');
+  const phoneInput = document.querySelector('.input-box[type="number"]');
+  const signupButton = document.querySelector('.signup-btn');
+  
+  // Phone number validation
+  const phoneRegex = /^\d{3}[- ]?\d{3}[- ]?\d{4}$/; // accepts only numbers
+  phoneInput.addEventListener('input', () => {
+    if (!phoneRegex.test(phoneInput.value)) {
+      phoneInput.setCustomValidity('Phone number should contain 10 numbers only');
+    } else {
+      phoneInput.setCustomValidity('');
+    }
+  });
+
+  const passwordRegex =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/; 
+  
+const passwordStrengthText = document.createElement('span');
+passwordStrengthText.style.marginLeft = '10px';
+passwordInput.parentNode.insertBefore(passwordStrengthText, passwordInput.nextSibling);
+passwordInput.addEventListener('input', () => {
+  if (passwordRegex.test(passwordInput.value)) {
+    passwordInput.style.backgroundColor = 'green';
+    passwordStrengthText.textContent = 'Strong';
+    passwordStrengthText.style.color = 'green';
+  } else if (passwordInput.value.length >= 5) {
+    passwordInput.style.backgroundColor = 'orange';
+    passwordStrengthText.textContent = 'Medium';
+    passwordStrengthText.style.color = 'orange';
+  } else if (passwordInput.value.length <= 4) {
+    passwordInput.style.backgroundColor = 'red';
+    passwordStrengthText.textContent = 'Weak';
+    passwordStrengthText.style.color = 'red';
+  } else {
+    passwordInput.style.backgroundColor = '';
+    passwordStrengthText.textContent = '';
+  }
+});
+
+
+
+  
+  // Confirm password validation
+  confirmInput.addEventListener('input', () => {
+    if (confirmInput.value !== passwordInput.value) {
+      confirmInput.setCustomValidity('Passwords do not match');
+    } else {
+      confirmInput.setCustomValidity('');
+    }
+  });
+  // Form submission
+  signupButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    const form = document.querySelector('form');
+    if (form.checkValidity()) {
+      // submit form
+      
+      alert("You have successfully signed in")
+      
+     
+    } else {
+      // show validation error messages
+      emailInput.reportValidity();
+      passwordInput.reportValidity();
+      confirmInput.reportValidity();
+      phoneInput.reportValidity();
+    }
+
+  });
+</script>
 <footer>
     <div class="copyright">
       <p>Copyright &#169 Praicy Tourism ltd</p>
